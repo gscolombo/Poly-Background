@@ -3,8 +3,8 @@ import initBuffers from "./initBuffers.js";
 import draw from "./draw.js";
 import redrawPolyPlane from "./redrawPolyPlane.js";
 
-export default function main(ncols, nrows) {
-  const canvas = document.querySelector("canvas.canvas_container");
+export default function main(canvasID, ncols, nrows) {
+  const canvas = document.querySelector(canvasID);
   const gl = canvas.getContext("webgl");
 
   // Set canvas display size to screen size
@@ -44,4 +44,4 @@ export default function main(ncols, nrows) {
   });
 }
 
-window.onload = main(6, 6);
+window.onload = main("canvas.canvas_container", 6, 6);
