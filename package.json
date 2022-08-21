@@ -1,0 +1,24 @@
+{
+  "name": "poly-bg",
+  "version": "1.0.0",
+  "description": "Polygonal animated background made with WebGL.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gscolombo/Poly-Background.git"
+  },
+  "keywords": [
+    "polygonal",
+    "WebGL",
+    "background"
+  ],
+  "author": "Gabriel S.C.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gscolombo/Poly-Background/issues"
+  },
+  "homepage": "https://github.com/gscolombo/Poly-Background#readme"
+}

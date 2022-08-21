@@ -3,7 +3,7 @@ import initBuffers from "./initBuffers.js";
 import draw from "./draw.js";
 import redrawPolyPlane from "./redrawPolyPlane.js";
 
-function main(ncols, nrows) {
+export default function main(ncols, nrows) {
   const canvas = document.querySelector("canvas.canvas_container");
   const gl = canvas.getContext("webgl");
 
@@ -19,8 +19,8 @@ function main(ncols, nrows) {
     return;
   }
 
-  const buffers = initBuffers(gl, ncols, nrows);
-  const programInfo = initProgram(gl, buffers.vertices.internal);
+  const buffers = initBuffers(gl, ncols, nrows); // Initialize buffers
+  const programInfo = initProgram(gl, buffers.vertices.internal); // Initialize shader program
 
   // Draw the image with the shader program
   draw(gl, programInfo, buffers);
