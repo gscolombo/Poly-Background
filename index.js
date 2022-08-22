@@ -1,7 +1,7 @@
-import initProgram from "./initProgram.js";
-import initBuffers from "./initBuffers.js";
-import draw from "./draw.js";
-import redrawPolyPlane from "./redrawPolyPlane.js";
+import initProgram from "./src/initProgram.js";
+import initBuffers from "./src/initBuffers.js";
+import draw from "./src/draw.js";
+import redrawPolyPlane from "./src/redrawPolyPlane.js";
 
 export default function main(canvasID, ncols, nrows) {
   const canvas = document.querySelector(canvasID);
@@ -43,5 +43,3 @@ export default function main(canvasID, ncols, nrows) {
     );
   });
 }
-
-window.onload = main("canvas.canvas_container", 6, 6);
