@@ -1,5 +1,5 @@
 {
-  "name": "poly-bg",
+  "name": "@gscolombo/poly-bg",
   "version": "1.0.0",
   "description": "Polygonal animated background made with WebGL API.",
   "main": "./index.js",
