@@ -3,13 +3,19 @@ import initBuffers from "./src/initBuffers.js";
 import draw from "./src/draw.js";
 import redrawPolyPlane from "./src/redrawPolyPlane.js";
 
-export default function main(canvasID, ncols, nrows) {
-  const canvas = document.querySelector(canvasID);
+export default function main(canvasID, ncols, nrows, width, height) {
+  const canvas = document.getElementById(canvasID);
   const gl = canvas.getContext("webgl");
 
-  // Set canvas display size to screen size
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight;
+  // Set canvas display size to user input size
+  canvas.width = width;
+  canvas.height = height;
+
+  // Check if number of columns and rows is over threshold
+  if (ncols <= 1 || nrows <= 1) {
+    alert("Invalid number of columns/rows. Must be greater than or equal to 2");
+    return;
+  }
 
   // Check if WebGL is available
   if (gl == null) {
