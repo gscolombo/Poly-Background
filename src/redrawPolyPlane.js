@@ -8,11 +8,23 @@ export default function redrawPolyPlane(
   ncols,
   nrows,
   time,
-  randomFactors
+  randomFactors,
+  animate = true
 ) {
   // Clear the canvas
   gl.clearColor(0, 0, 0, 1);
   gl.clear(gl.COLOR_BUFFER_BIT);
+
+  pairs = pairs.map((pair, index) => {
+    let [x, y] = pair;
+    x =
+      x * Math.cos(((2 * Math.PI) / 60) * time) +
+      y * Math.sin(((2 * Math.PI) / 60) * time);
+    y =
+      y * Math.cos(((2 * Math.PI) / 60) * time) -
+      x * Math.sin(((2 * Math.PI) / 60) * time);
+    return [x, y];
+  });
 
   pairs.forEach((pair, index) => {
     // Set periodic point translation
@@ -33,7 +45,17 @@ export default function redrawPolyPlane(
   });
 
   time += 1 / 60;
-  requestAnimationFrame(() => {
-    redrawPolyPlane(gl, programInfo, pairs, ncols, nrows, time, randomFactors);
-  });
+
+  if (animate)
+    requestAnimationFrame(() => {
+      redrawPolyPlane(
+        gl,
+        programInfo,
+        pairs,
+        ncols,
+        nrows,
+        time,
+        randomFactors
+      );
+    });
 }

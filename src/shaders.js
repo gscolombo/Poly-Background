@@ -45,7 +45,6 @@ export default function setShaderPrograms(centralPairs) {
         // Convert the position from pixels to the interval [-1,1] (clip space interval)
         vec2 clipSpacePosition = (((aVertexPosition / uResolution) * 2.0) - 1.0);
 
-
         vColor = aColor;
         
         // Check and set individual internal vertex translation
@@ -55,6 +54,8 @@ export default function setShaderPrograms(centralPairs) {
             }
     }
     `;
+
+  console.log(vsSource);
 
   const fsSource = `
     precision mediump float;
