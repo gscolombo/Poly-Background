@@ -10,7 +10,7 @@ export default function setShaderPrograms(centralPairs) {
   // Template string to declare internal vertex translation uniforms
   const positionsUniformsText = positionsUniforms
     .map((uniform) => `uniform vec2 ${uniform}; \n\t`)
-    .join("");
+    .join('');
 
   // Template string for individual internal vertex translation setting
   const setInternalVertexPosition = centralPairs
@@ -27,7 +27,7 @@ export default function setShaderPrograms(centralPairs) {
             } else `;
       }
     })
-    .join("");
+    .join('');
 
   // Vertex shader program
   const vsSource = `
@@ -54,8 +54,6 @@ export default function setShaderPrograms(centralPairs) {
             }
     }
     `;
-
-  console.log(vsSource);
 
   const fsSource = `
     precision mediump float;
